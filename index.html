@@ -148,31 +148,37 @@
       }
     }
     
-    @media (max-width: 768px) {
-  html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100svh; 
-    background-color: #100f0f;
-    background-image: url('mobile-background-mirrored.png');
-    background-position: top center;
-    background-repeat: repeat-y;     /* безкрайно повтаряне вертикално */
-    background-size: 100% auto;      /* запазва пропорциите */
-    overflow: hidden;                /* няма скрол */
-  }
+    @media (max-width: 480px) {
+      .logo {
+        height: 80px;
+        margin-left: -10px;
+      }
+      .profile-img {
+        width: 80px;
+        height: 80px;
+        margin-right: -10px;
+      }
+      .info-line a {
+        text-decoration: none !important;
+      }
+    }
+        h1, h2 {font-family: 'Playfair Display', serif;}
+    body, .info-line span, .info-line a {font-family: 'Inter', sans-serif;}
 
-  .wrapper {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    padding: 16px;
-    z-index: 1;
-  }
-
-  .card { margin: 0; }
+body {
+  background-image: url('background.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
+
+
+.card {
+  max-width: 360px;
+  padding: 25px;
+  margin: 50px auto;
+}
+
 
 /* Safe sizing/overflow fixes */
 .card { max-width: 430px; padding: 32px 28px; margin: 48px auto; overflow: hidden; }
@@ -265,7 +271,7 @@
     background-color: #100f0f;
   }
 }
-    /* МОБИЛНИ НАСТРОЙКИ */
+/* МОБИЛНИ НАСТРОЙКИ */
 @media (max-width: 768px) {
   /* 1) Фонът: без изрязване + коректна височина на екрана */
   html, body {
@@ -301,31 +307,6 @@
     padding: 16px;
     z-index: 1;
   }
-}
-    @media (max-width: 768px) {
-  html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100dvh;
-    background-color: #100f0f;
-    background-image: url('mobile-background.png');
-    background-size: contain;       /* запазваш цялата картинка */
-    background-position: top center;
-    background-repeat: repeat-y;    /* повтаря я вертикално */
-    overflow: hidden;               /* без скрол в тялото */
-  }
-
-  .wrapper {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    padding: 16px;
-    z-index: 1;
-  }
-
-  .card { margin: 0; }
 }
 </style>
 </head>
