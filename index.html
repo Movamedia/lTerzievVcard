@@ -271,6 +271,43 @@ body {
     background-color: #100f0f;
   }
 }
+    /* МОБИЛНИ НАСТРОЙКИ */
+@media (max-width: 768px) {
+  /* 1) Фонът: без изрязване + коректна височина на екрана */
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100svh;        /* safe viewport височина (iOS/Android) */
+    background-color: #100f0f; /* нюансът ти за „ленти“ */
+    background-image: url('mobile-background.png');
+    background-size: contain !important;   /* показва се цялото изображение */
+    background-repeat: no-repeat;
+    background-position: center center;
+    overflow-y: auto;           /* скрол на страницата (не в картата) */
+  }
+
+  @supports (min-height: 100dvh) {
+    html, body { min-height: 100dvh; }     /* още по-точно, ако се поддържа */
+  }
+
+  /* 2) Картата: премахваме вътрешния скрол и ограничение на височина */
+  .card {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  /* Ако искаш картата да е фиксирана в центъра, остави wrapper fixed.
+     Ако си имал fixed, оставяме го така: */
+  .wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 16px;
+    z-index: 1;
+  }
+}
 </style>
 </head>
 <body>
