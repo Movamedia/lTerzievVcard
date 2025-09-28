@@ -184,19 +184,6 @@ body {
 .card { max-width: 430px; padding: 32px 28px; margin: 48px auto; overflow: hidden; }
 .header { align-items: center; gap: 12px; }
 .profile-img { width: 96px; height: 96px; object-fit: cover; flex-shrink: 0; }
-@media (max-width: 768px) {
-  html, body {
-    min-height: 100svh; /* цял екран на мобилни, включително iOS/Android UI */
-  }
-
-  body {
-    background-image: url('mobile-background.png'); /* сложи правилния път/име */
-    background-size: contain !important;   /* показва цялото изображение */
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-color: #100f0f;             /* нюанс на черно вместо чисто черно */
-  }
-}
 @media (max-width: 480px) {
   /* Картата – малко по-широка */
   .card {
@@ -306,6 +293,35 @@ body {
     width: 100%;
     padding: 16px;
     z-index: 1;
+  }
+}
+    @media (max-width: 768px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100svh;               /* височина спрямо мобилния viewport */
+    background-color: #100f0f;        /* нюансът за пълнеж */
+    background-image: url('mobile-background-mirrored.png');
+    background-position: top center;  /* винаги започва отгоре */
+    background-repeat: repeat-y;      /* повтаря се вертикално */
+    background-size: 100% auto;       /* пълна ширина, височина по пропорция */
+    overflow: hidden;                 /* премахва скрола */
+  }
+
+  .wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 16px;
+    z-index: 1;
+  }
+
+  .card {
+    margin: 0;
+    max-height: none !important;
+    overflow: visible !important;
   }
 }
 </style>
