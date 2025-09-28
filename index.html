@@ -324,6 +324,38 @@ body {
     overflow: visible !important;
   }
 }
+    @media (max-width: 768px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100svh;
+    overflow: hidden;
+    background-color: #100f0f;
+  }
+
+  body {
+    /* Фонът запълва цялата ширина на екрана, височината по пропорция; повтаря се вертикално */
+    background-image: url('mobile-background-mirrored.png?v=4') !important;
+    background-position: top center !important;
+    background-repeat: repeat-y !important;
+    background-size: 100vw auto !important;   /* <-- ключът срещу черните страни */
+    background-origin: border-box;
+    background-clip: border-box;
+  }
+
+  .wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 16px;
+    z-index: 1;
+  }
+
+  .card { margin: 0; max-height: none; overflow: visible; }
+}
 </style>
 </head>
 <body>
