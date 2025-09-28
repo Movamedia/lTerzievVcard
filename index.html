@@ -356,6 +356,18 @@ body {
 
   .card { margin: 0; max-height: none; overflow: visible; }
 }
+    @media (max-width: 768px) {
+  a, a:link, a:visited, a:active, a:hover {
+    text-decoration: none !important;
+    border: none !important;
+    outline: none !important;
+  }
+
+  /* за всеки случай и за <span>, ако браузърът е направил auto-link */
+  span {
+    text-decoration: none !important;
+  }
+}
 </style>
 </head>
 <body>
