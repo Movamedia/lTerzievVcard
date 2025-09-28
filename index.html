@@ -368,6 +368,17 @@ body {
     text-decoration: none !important;
   }
 }
+    .no-underline {
+  color: #f5e3bb;
+  text-decoration: none !important;
+}
+
+.no-underline:visited,
+.no-underline:hover,
+.no-underline:active {
+  color: #f5e3bb;
+  text-decoration: none !important;
+}
 </style>
 </head>
 <body>
@@ -389,9 +400,12 @@ body {
 <div class="info-line"><img src="website.png" alt="Website" /> <a href="https://mova.bg" target="_blank">MOVA MEDIA</a></div>
 <div class="info-line"><img src="facebook.png" alt="Facebook" /> <a href="https://www.facebook.com/profile.php?id=61575649376514" target="_blank">Facebook</a></div>
 <div class="info-line"><img src="instagram.png" alt="Instagram" /> <a href="https://www.instagram.com/mova.bg" target="_blank">Instagram</a></div>
-<div class="info-line"><img src="phone.png" alt="Phone" /> <span>+359 896 772336</span></div>
-<div class="info-line"><img src="email.png" alt="Email" /> <span>lyuboslav@mova.bg</span></div>
-      </div>
+<div class="info-line"><img src="phone.png" alt="Phone" />
+  <a href="tel:+359896772336" class="no-underline">+359 896 772336</a>
+</div>
+<div class="info-line"><img src="email.png" alt="Email" />
+  <a href="mailto:lyuboslav@mova.bg" class="no-underline">lyuboslav@mova.bg</a>
+</div>
       <a href="Lyuboslav_Terziev_Universal.vcf" class="add-btn" download>+ Add to Contacts</a>
     </div>
   </div>
